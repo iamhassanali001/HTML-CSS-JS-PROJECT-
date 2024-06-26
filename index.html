@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <button id="toggle-theme-button">Dark Mode</button>
+        <h1>Library Management System</h1>
+    </header>
+
+    <section id="book-list" class="active">
+        <!-- <h2>Library Management System</h2> -->
+        <div class="button-container top-buttons">
+            <button onclick="showSection('authors-list')">Authors</button>
+            <button onclick="showSection('publishers-list')">Publishers</button>
+        </div>
+        <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Book Name</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="book-table-body">
+                <!-- Dynamic Content -->
+            </tbody>
+        </table>
+        <div class="button-container bottom-buttons">
+            <button id="add-new" onclick="showSection('add-book')">Add New Book</button>
+        </div>
+    </section>
+
+    <section id="add-book">
+        <h2>Add New Book</h2>
+        <form id="add-book-form">
+            <input type="text" id="book-name" placeholder="Book Name" required>
+            <input type="text" id="author-name" placeholder="Author Name" required>
+            <input type="text" id="publisher-name" placeholder="Publisher Name" required>
+            <input type="date" id="publication-date" placeholder="yyyy-mm-dd" required>
+            <div class="button-container">
+                <button type="submit">Submit</button>
+                <button type="button" onclick="showSection('book-list')">Go Back</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="update-book">
+        <h2>Update Book</h2>
+        <form id="update-book-form">
+            <input type="text" id="update-book-name" placeholder="Book Name" required>
+            <input type="text" id="update-author-name" placeholder="Author Name" required>
+            <input type="text" id="update-publisher-name" placeholder="Publisher Name" required>
+            <input type="date" id="update-publication-date" placeholder="yyyy-mm-dd" required>
+            <div class="button-container">
+                <button type="submit" class="normal-width">Update</button>
+                <button type="button" class="normal-width" onclick="showSection('book-list')">Go Back</button>
+            </div>
+        </form>
+    </section>
+    <!-- authors -->
+    <section id="authors-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>Author</th>
+                    <th>Number of Books</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="authors-table-body"></tbody>
+        </table>
+        <div class="button-container">
+            <button type="button" onclick="showSection('book-list')">Go Back</button>
+        </div>
+    </section>
+    <!-- authers-new
+     <!-- authers-new -->
+    <section id="publishers-list">
+        <!-- <h2>Publishers</h2> -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Publisher</th>
+                    <th>No of Books</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="publishers-table-body">
+                <!-- Dynamic Content -->
+            </tbody>
+        </table>
+        <div class="button-container">
+            <button type="button" onclick="showSection('book-list')">Go Back</button>
+        </div>
+    </section>
+
+    <script src="work.js"></script>
+</body>
+</html>
